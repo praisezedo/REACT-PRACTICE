@@ -1,15 +1,9 @@
-import React from "react";
-import ChildComponent from "./ChildComponent";
+
+import ReactDOM from 'react-dom';
 
 export default function ParentComponent() {
-
-     function clickHandler () {
-        alert("button clicked");
-    }
-
-    return (
-        <React.Fragment>
-              <ChildComponent clickFunction={clickHandler}/>
-        </React.Fragment>
+    return ReactDOM.createPortal(
+        <h1>Hello from portals </h1>,
+        document.getElementById('portal-root')
     )
 };
