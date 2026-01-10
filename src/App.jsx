@@ -1,6 +1,10 @@
 import { useState , useEffect} from "react";
 import Calculator from "./Calculator";
 import ParentComponent from "./ParentComponent";
+import ClickCounter from "./ClickCounter";
+import HoverCounter from "./HoverCounter";
+import { Provider } from "./useContext";
+import ChildComponent from "./ChildComponent";
 function App() {
     const [time , settime] = useState(new Date());
     useEffect(() => {
@@ -28,6 +32,8 @@ return (
 
     <Calculator></Calculator>
     <ParentComponent></ParentComponent>
+    <ClickCounter></ClickCounter>
+    <HoverCounter></HoverCounter>
     </>
 )
 }

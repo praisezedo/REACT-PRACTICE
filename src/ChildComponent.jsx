@@ -1,19 +1,17 @@
-import React, { PureComponent } from "react";
+import { PureComponent } from "react";
+import { Consumer } from "./useContext";
 
 export default class ChildComponent extends PureComponent {
 
     constructor(props) {
         super(props);
-        this.inputRef = React.createRef();
-    }
-    
-    componentDidMount() {
-        this.inputRef.current.focus();
     }
     render() {
         return (
             <>
-          <input className="flex justify-center items-center text-center" ref={this.inputRef} type="text" placeholder="enter your name.." />  
+               <Consumer>
+                {(value) => <h1 className="font-bold text-2xl my-3">{value}</h1>}
+               </Consumer>
             </>
         )
     }}
