@@ -1,8 +1,9 @@
-import ImageSlider from "./ImageSlider";
+import ClickCounter from './ClickCounter.jsx';
+
 function App() {
    return (
     <>
-    <ImageSlider/>
+       <ClickCounter />
     </>
    )
 }

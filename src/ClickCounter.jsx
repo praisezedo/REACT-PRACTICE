@@ -1,12 +1,36 @@
 
-import withCounter from "./withCounter";
+import { useState , useEffect } from "react";
 
-const ClickCounter = (props) => {
-        const { incrementCount, count } = props;
-        return (
-            <button className="bg-green-500 text-white p-3 rounded-2xl hover:opacity-50" onClick={incrementCount}>Clicked {count} times</button>
-        );
-    };
+function ClickCounter() {
+const [x , setX] = useState(0);
+const [y , setY] = useState(0);
+const [display , setDisplay] = useState(false);
 
+const logMousePosition = (e) => {
+    setX(e.clientX);
+    setY(e.clientY);
+    console.log("Mouse Event");
+}   
+useEffect(() => {
+    console.log("Adding Event Listener");
+    window.addEventListener('mousemove' , logMousePosition);
 
-export default withCounter(ClickCounter);
+    return () => {
+        console.log("Removing Event Listener");
+
+        window.removeEventListener('mousemove' , logMousePosition);
+    }
+} , []);
+
+  return (
+     <>
+  <button className="" onClick={() => setDisplay(!display)}>display Mouse event</button>
+  {
+    display &&  <div> 
+        <h1 className="text-4xl font-bold text-center my-10">Mouse Position: x - {x}, y - {y}</h1>
+    </div>
+  }</>
+  );
+}
+
+export default ClickCounter;
