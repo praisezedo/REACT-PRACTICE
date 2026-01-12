@@ -1,4 +1,4 @@
-import ClickCounter from './ClickCounter.jsx';
+import ClickCounter from './ClickCounter';
 
 function App() {
    return (
