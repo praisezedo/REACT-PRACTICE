@@ -1,9 +1,9 @@
-import ClickCounter from './ClickCounter';
+import ToastDemo from './ToastDemo';
 
 function App() {
    return (
     <>
-       <ClickCounter />
+       <ToastDemo />
     </>
    )
 }
