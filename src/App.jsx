@@ -1,9 +1,9 @@
-import ToastDemo from './ToastDemo';
 
+import NoteApp from './NoteApp';
 function App() {
    return (
     <>
-       <ToastDemo />
+     <NoteApp  /> 
     </>
    )
 }
